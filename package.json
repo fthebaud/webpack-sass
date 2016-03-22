@@ -1,0 +1,20 @@
+{
+  "name": "webpack-sass",
+  "version": "0.0.1",
+  "description": "trying out the sass loader",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fabien Thebaud",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fthebaud/webpack-sass.git"
+  },
+  "devDependencies": {
+    "node-sass": "3.4.2",
+    "sass-loader": "3.2.0",
+    "webpack": "1.12.14"
+  }
+}
