@@ -34,7 +34,7 @@ var webpackConfig = {
   module: {
     loaders: [{
       test: /\.scss$/,
-      loader: "css-loader!sass-loader"
+      loader: "style-loader!css-loader!sass-loader"
     }]
   },
   plugins: [
