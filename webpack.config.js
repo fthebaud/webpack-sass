@@ -18,8 +18,9 @@ var webpackConfig = {
   target: 'web',
   cache: true,
   resolve: {
-    extensions: [''], //extensions to add when resolving modules (that includes the entry)
-    //directory names to be resolved to the current directory as well as its ancestors, and searched for modules. similar to how node finds ?node_modules?
+    extensions: ['', '.js'], //extensions to add when resolving modules (that includes the entry). .js is needed for webpack-dev-server
+    // directory names to be resolved to the current directory as well as its ancestors, and searched for modules.
+    // similar to how node finds 'node_modules'
     modulesDirectories: ['node_modules'], //where to find the vendor modules
     root: [cfg.srcDir] //absolute path that contains our own modules
   },
@@ -30,6 +31,7 @@ var webpackConfig = {
   output: {
     path: cfg.buildDir,
     filename: 'js/bundle-[hash].js'
+    // publicPath: "/" //inutile: par defaut le resultat de webpack (apres build en cas de modif) est servi depuis /
   },
   module: {
     loaders: [{
@@ -55,7 +57,7 @@ var webpackConfig = {
   devServer: {
     "port": 9090,
     "contentBase": "build",
-    "inline": true
+    "inline": true //necessaire pour rafraichir le client apres un rebuild
   }
 };
 
