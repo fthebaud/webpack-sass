@@ -37,6 +37,14 @@ var webpackConfig = {
     loaders: [{
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!sass-loader")
+    }, {
+      test: /\.jpg$/,
+      loader: "url-loader",
+      query: {
+        limit: '10000',
+        mimetype: 'image/jpg',
+        name: 'resources/[name]-[hash].[ext]'
+      }
     }]
   },
   plugins: [
